@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/1ef8c94506.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Elymaic&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- main page -->
+    <div class="container">
+        <div class="header">
+            <p>BOOKS MANAGEMENT</p>
+            <div class="buttons">
+                <a><input type="number" id="searchById" placeholder="search By ID"><i onclick="searchById()"
+                        class="fa-solid fa-binoculars"></i></a>
+                <a><i onclick="showForm()" class="fa-solid fa-book"></i></a>
+                <a><i onclick="refresh()" class="fa-solid fa-arrows-rotate"></i></a>
+            </div>
+        </div>
+        <table id="table">
+        </table>
+    </div>
+
+
+    <!-- deleting popup -->
+    <div class="popup" id="popup">
+        <div class="head">
+            <h2>Confirm the Book Details</h2>
+            <a><i class="fa-solid fa-xmark" onclick="closePopUp()"></i></a>
+        </div>
+        <div class=".deleteText">
+            <p id="deleteText"></p>
+        </div>
+        <div class="actions">
+            <button onclick="deleteRecord()" id="dltBtn">Delete</button>
+            <button onclick="closePopUp()" id="cnlBtn">Cancel</button>
+        </div>
+    </div>
+
+    <!-- form -->
+    <div class="form" id="userForm">
+        <form onsubmit="addExpense(event)">
+            <input type="number" id="id" placeholder="ID">
+            <input type="text" id="title" placeholder="Title">
+            <input type="text" id="author" placeholder="Author">
+            <input type="text" id="genre" placeholder="GENRE">
+            <input type="text" id="publication_year" placeholder="Publication Year">
+            <input type="text" id="language" placeholder="Language">
+            <input type="number" id="price" placeholder="Price">
+            <input type="number" id="isbn" placeholder="ISBN">
+            <input type="text" id="publisher" placeholder="Publisher">
+            <input type="number" id="rating" placeholder="Rating">
+            <button type="submit">Add Book</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
